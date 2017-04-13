@@ -36,6 +36,8 @@ The demo is tested on ***Ubuntu 16.04*** Platform。 We do not guarantee Windows
 
 Clone/ Fork this repo and get started
 
+You will need to go to app>twitter>TwitterIngestion to use your Twitter OAuthToken and Credential
+
 ```sh
 $ cd nrt-demo-backend
 $ sbt run
