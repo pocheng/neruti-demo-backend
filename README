@@ -1,49 +1,58 @@
-This is your new Play application
-=================================
+# NerutiDemo - Sentiment Analysis Map Visualisation (SAMV)
+>   by Neruti Developers
 
-This file will be packaged with your application when using `activator dist`.
+This application(SAMV) is only for demo purpose and has no real real-world application due to the missing of some components in the natural language processing pipelines such as:
 
-There are several demonstration files available in this template.
+  - Word Standardization 
+  - Language Detection
+  - Model is pretrained using Stanford Sentiment Treebank
+  - Lemmatization
+  - Removing not usable symbols 
 
-Controllers
-===========
+# Version
 
-- HomeController.scala:
+  - 12 April 2017 - The first version pushed - 1.0
 
-  Shows how to handle simple HTTP requests.
 
-- AsyncController.scala:
+# Bugs
+As this is the so called "part-time" project/simple demo for Neruti Developers and we do not spend too much focusing on fixing the bugs as it would divert our direction. These are the bugs：
+  - Stopping Twitter Stream, SparkSession is not really working
+  - We can only open one instance/tab to query for one thing only at one time because sharing of Twitter application key/OAuth Key, this can be fixed by allowing user to submit their own OAuth key in frontend and every submission of query will call TwitterUtil again
+  - If geographical area of the user is not available, problem comes
+  - User need to refresh the backend and frontend often if they want to change query
+  - Cannot catch errors in the frontend when the backend has closed connection
+  - Using Spark core instead of Spark Streaming 
 
-  Shows how to do asynchronous programming when handling a request.
+### Installation of Backend
 
-- CountController.scala:
+SAMV requires few things to run and it uses Play Framework as our backend technology (API).
+1.  [Java+Scala](https://www.scala-lang.org/download/) 
+2.  [sbt](http://www.scala-sbt.org/) 
+3.  [RabbitMQ](https://www.rabbitmq.com/download.html) 
+4.  [Redis](https://redis.io/) 
+5.  [Spark](http://spark.apache.org/) 
 
-  Shows how to inject a component into a controller and use the component when
-  handling requests.
+The demo is tested on ***Ubuntu*** Platform。 We do not guarantee Windows can return the same result as installation of the server stuff like redis,rabbitmq and spark will be issues as well.
 
-Components
-==========
+Clone/ Fork this repo and get started
 
-- Module.scala:
+```sh
+$ cd nrt-demo-backend
+$ activator run
+```
 
-  Shows how to use Guice to bind all the components needed by your application.
+Run the frontend until Spark Session is finished initializing.
+You can monitor the MQ and Spark at its monitoring port, refer to Uncle Google/contributors if unclear.
 
-- Counter.scala:
+### Frontend
+Please visit [SAMV FrontEnd Repo](https://github.com/neruti-developers/neruti-demo-frontend) for more.
 
-  An example of a component that contains state, in this case a simple counter.
 
-- ApplicationTimer.scala:
+### Contributor List
+*Austin Goh*  - austin@neruti.com 
 
-  An example of a component that starts when the application starts and stops
-  when the application stops.
+---
+***Disclaimer*** *We do not guaranteed that it will be maintained well as this repo is just opened for sharing*
 
-Filters
-=======
-
-- Filters.scala:
-
-  Creates the list of HTTP filters used by your application.
-
-- ExampleFilter.scala
-
-  A simple filter that adds a header to every response.
+Enjoy, 
+*Austin (zhao yang)*
