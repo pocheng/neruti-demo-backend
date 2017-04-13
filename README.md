@@ -1,4 +1,4 @@
-# NerutiDemo - Sentiment Analysis Map Visualisation (SAMV)
+# NerutiDemo (Backend) - Sentiment Analysis Map Visualisation (SAMV)
 >   by Neruti Developers
 
 This application(SAMV) is only for demo purpose and has no real real-world application due to the missing of some components in the natural language processing pipelines such as:
@@ -32,13 +32,13 @@ SAMV requires few things to run and it uses Play Framework as our backend techno
 4.  [Redis](https://redis.io/) 
 5.  [Spark](http://spark.apache.org/) 
 
-The demo is tested on ***Ubuntu*** Platform。 We do not guarantee Windows can return the same result as installation of the server stuff like redis,rabbitmq and spark will be issues as well.
+The demo is tested on ***Ubuntu 16.04*** Platform。 We do not guarantee Windows can return the same result as installation of the server stuff like redis,rabbitmq and spark will be issues as well.
 
 Clone/ Fork this repo and get started
 
 ```sh
 $ cd nrt-demo-backend
-$ activator run
+$ sbt run
 ```
 
 Run the frontend until Spark Session is finished initializing.
